@@ -17,27 +17,25 @@ class NhanVien
 	{
 		luong = luongCoBan*heSoLuong;
 	}
-	public double getTinhLuong()
-	{
-		return luong;
-	}
 	public void inTTin()
 	{
 		System.out.println(tenNhanVien);
 		System.out.println(luongCoBan);
 		System.out.println(heSoLuong);
 		System.out.println(luongMax);
-		System.out.println(luong);
 	}
-	public double tangLuong(double n)
+	public boolean gettangLuong(double n)
 	{
-		for (; heSoLuong<=n; heSoLuong++)
+		heSoLuong = n;
+		tinhLuong();
+		if (luong > luongMax)
 		{
-			if (heSoLuong > luongMax)
-			{
-				break;
-				return boolean test = false;
-			}
+			System.out.println("Sorry!");
+			return false;
+		}
+		else
+		{
+			return true;
 		}
 	}
 }
@@ -48,10 +46,7 @@ public class Bai3
 	{
 		NhanVien kq = new NhanVien();
 		kq.setNhanVien("Minh", 1, 2, 3);
-		kq.tangLuong(5);
-		kq.tinhLuong();
-		System.out.println(kq.getTinhLuong());
-		System.out.println("\n");
+		kq.gettangLuong(5);
 		kq.inTTin();
 	}
 }
